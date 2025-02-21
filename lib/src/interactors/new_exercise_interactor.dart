@@ -3,7 +3,7 @@ import 'package:yet_another_fitness_tracker/src/interactors/datamanager_interact
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
 
-mixin NewExerciseInteractor {
+abstract class NewExerciseInteractor {
   Future<List<MeasurementDimension>> getExerciseDimensions();
 
   Future<List<ExerciseType>> getExerciseTypeList();
@@ -13,7 +13,7 @@ mixin NewExerciseInteractor {
 }
 
 class DefaultNewExerciseInteractor extends DataManagerInteractor
-    with NewExerciseInteractor {
+    implements NewExerciseInteractor {
   DefaultNewExerciseInteractor(DataManager dataManager) : super(dataManager);
 
   @override

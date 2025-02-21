@@ -4,7 +4,7 @@ import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
 import 'package:yet_another_fitness_tracker/src/models/rep.dart';
 
-mixin ExerciseSetInteractor {
+abstract class ExerciseSetInteractor {
   Future<List<RepType>> getRepTypes();
 
   Future<ExerciseSet> saveExerciseSet(
@@ -12,7 +12,7 @@ mixin ExerciseSetInteractor {
 }
 
 class DefaultExerciseSetInteractor extends DataManagerInteractor
-    with ExerciseSetInteractor {
+    implements ExerciseSetInteractor {
   DefaultExerciseSetInteractor(DataManager dataManager) : super(dataManager);
 
   @override

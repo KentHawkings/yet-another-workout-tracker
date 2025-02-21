@@ -3,7 +3,7 @@ import 'package:yet_another_fitness_tracker/src/interactors/datamanager_interact
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
 
-mixin ExerciseListInteractor {
+abstract class ExerciseListInteractor {
   Future<List<Exercise>> getExerciseList();
 
   Future<Exercise> addExercise(
@@ -11,7 +11,7 @@ mixin ExerciseListInteractor {
 }
 
 class DefaultExerciseListInteractor extends DataManagerInteractor
-    with ExerciseListInteractor {
+    implements ExerciseListInteractor {
   final ExerciseType type;
 
   DefaultExerciseListInteractor(DataManager dataManager, this.type)

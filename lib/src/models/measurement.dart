@@ -28,20 +28,26 @@ class MeasurementDimension {
   }
 }
 
-enum MeasurementSystem { metric, imperial }
+enum MeasurementSystem {
+  metric(id: 0), imperial(id: 1);
 
-extension WeightMeasurementSystemId on MeasurementSystem {
-  int get id {
-    switch (this) {
-      case MeasurementSystem.metric:
-        return 0;
-      case MeasurementSystem.imperial:
-        return 1;
+  const MeasurementSystem({
+    required this.id
+  });
+
+  final int id;
+
+  static MeasurementSystem fromId(int? id) {
+    switch (id) {
+      case 0:
+        return MeasurementSystem.metric;
+      case 1:
+        return MeasurementSystem.imperial;
+      default:
+        return MeasurementSystem.metric;
     }
   }
-}
 
-extension WeightMeasurementLocalization on MeasurementSystem {
   String localizedString(BuildContext context) {
     switch (this) {
       case MeasurementSystem.imperial:

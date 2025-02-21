@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import 'package:provider/provider.dart';
 import 'package:yet_another_fitness_tracker/src/data/local/shared_prefs.dart';
-import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
 import 'package:yet_another_fitness_tracker/src/themer.dart';
 import 'package:yet_another_fitness_tracker/src/ui/common/view_model_state.dart';
 import 'package:yet_another_fitness_tracker/src/constants/dimens.dart';

@@ -14,11 +14,11 @@ class ExerciseTypeListPage extends StatefulWidget {
     return MultiProvider(
       providers: [
         ProxyProvider<DataManager, ExerciseTypeListInteractor>(
-          update: (_, dataManager, prev) =>
+          update: (_context, dataManager, _prev) =>
               DefaultExerciseTypeListInteractor(dataManager),
         ),
         ProxyProvider<ExerciseTypeListInteractor, ExerciseTypeListViewModel>(
-          update: (context, interactor, previous) =>
+          update: (context, interactor, _prev) =>
               ExerciseTypeListViewModel(context, interactor),
         ),
       ],

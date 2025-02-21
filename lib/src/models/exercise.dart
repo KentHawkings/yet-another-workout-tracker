@@ -65,6 +65,7 @@ class Exercise {
 class ExerciseSet {
   int id = 0;
 
+  @Transient()
   MeasurementSystem measurementSystem;
 
   /// The definition of the exercise performed
@@ -86,10 +87,6 @@ class ExerciseSet {
   int get dbMeasurementSystem => measurementSystem.id;
 
   set dbMeasurementSystem(int value) {
-    if (value == MeasurementSystem.imperial.id) {
-      measurementSystem = MeasurementSystem.imperial;
-    } else {
-      measurementSystem = MeasurementSystem.metric;
-    }
+    MeasurementSystem.fromId(value);
   }
 }

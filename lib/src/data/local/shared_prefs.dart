@@ -36,14 +36,10 @@ class SharedPrefs {
   bool get dbSeeded => _prefs.getBool(_sharedPrefsDbSeeded) ?? false;
 
   Future<bool> setWeightMeasurement(MeasurementSystem value) =>
-      _prefs.setInt(_sharedPrefsWeightMeasurement, value.index);
+      _prefs.setInt(_sharedPrefsWeightMeasurement, value.id);
 
   MeasurementSystem get weightMeasurement {
     var index = _prefs.getInt(_sharedPrefsWeightMeasurement);
-    if (index != null) {
-      return MeasurementSystem.values[index];
-    } else {
-      return MeasurementSystem.metric;
-    }
+    return MeasurementSystem.fromId(index);
   }
 }

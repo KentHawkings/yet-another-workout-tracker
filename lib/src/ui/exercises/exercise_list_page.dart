@@ -26,7 +26,7 @@ class ExerciseListPage extends StatefulWidget {
     );
   }
 
-  const ExerciseListPage({Key? key}) : super(key: key);
+  const ExerciseListPage({super.key});
 
   @override
   State<ExerciseListPage> createState() => _ExerciseListPageState();
@@ -41,8 +41,8 @@ class _ExerciseListPageState
       child: viewModelConsumer(
         builder: (_, viewModel, child) {
           return Container(
-            child: _buildList(viewModel),
             color: Colors.amber,
+            child: _buildList(viewModel),
           );
         },
       ),

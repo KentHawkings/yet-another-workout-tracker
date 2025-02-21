@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/new_exercise_interactor.dart';
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
@@ -15,12 +14,11 @@ class NewExerciseViewModel extends InteractorViewModel<NewExerciseInteractor> {
 
   List<MeasurementDimension> measurementDimensions = [];
 
-  NewExerciseViewModel(BuildContext context, NewExerciseInteractor interactor,
+  NewExerciseViewModel(super.context, super.interactor,
       [Exercise? exercise])
       : _measurementDimension = exercise?.dimension.target,
         _name = exercise?.name,
-        _exerciseType = exercise?.type.target,
-        super(context, interactor) {
+        _exerciseType = exercise?.type.target {
     load();
   }
 

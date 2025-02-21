@@ -8,12 +8,12 @@ class ColorPicker extends StatelessWidget {
   final Color selectedColor;
 
   const ColorPicker(
-      {Key? key, required this.selectedColor, required this.onColorChanged})
-      : super(key: key);
+      {super.key, required this.selectedColor, required this.onColorChanged});
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      padding: const EdgeInsets.all(Dimens.spaceLarge),
       child: BlockPicker(
         pickerColor: selectedColor,
         onColorChanged: onColorChanged,
@@ -30,7 +30,6 @@ class ColorPicker extends StatelessWidget {
           );
         },
       ),
-      padding: const EdgeInsets.all(Dimens.spaceLarge),
     );
   }
 }

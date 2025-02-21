@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/exercise_type_list_interactor.dart';
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/ui/common/view_model.dart';
@@ -10,9 +9,9 @@ class ExerciseTypeListViewModel
   ExerciseType? _selectedExerciseType;
 
   ExerciseTypeListViewModel(
-    BuildContext context,
-    ExerciseTypeListInteractor interactor,
-  ) : super(context, interactor) {
+    super.context,
+    super.interactor,
+  ) {
     load();
   }
 

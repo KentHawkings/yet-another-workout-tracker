@@ -30,7 +30,7 @@ class ExerciseSetPage extends StatefulWidget {
 
   final Exercise? exercise;
 
-  const ExerciseSetPage({Key? key, this.exercise}) : super(key: key);
+  const ExerciseSetPage({super.key, this.exercise});
 
   @override
   State<StatefulWidget> createState() => _ExerciseSetPageState();
@@ -117,8 +117,8 @@ class _ExerciseSetPageState
             items: viewModel.repTypes!
                 .map(
                   (value) => DropdownMenuItem(
-                    child: Text(value.name),
                     value: value,
+                    child: Text(value.name),
                   ),
                 )
                 .toList(),

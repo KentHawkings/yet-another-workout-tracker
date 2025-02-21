@@ -1,5 +1,5 @@
 import 'package:flutter/widgets.dart';
 
 abstract class BaseStatefulWidget extends StatefulWidget {
-  const BaseStatefulWidget({Key? key}) : super(key: key);
+  const BaseStatefulWidget({super.key});
 }

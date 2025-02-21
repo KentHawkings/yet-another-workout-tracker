@@ -43,8 +43,10 @@ class DatabaseSeeder {
   Future<void> seed(BuildContext context) async {
     var exerciseTypes = _getExerciseTypes(context);
     var dimensions = _getMeasurementDimensions(context);
-    await _seedExercises(context, exerciseTypes, dimensions);
-    await _seedRepTypes(context);
+    Future.wait([
+      _seedExercises(context, exerciseTypes, dimensions),
+      _seedRepTypes(context)
+    ]);
   }
 
   Future<List<Exercise>> _seedExercises(

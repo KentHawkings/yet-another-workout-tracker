@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/exercise_list_interactor.dart';
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/ui/common/view_model.dart';
@@ -7,8 +6,7 @@ class ExerciseListViewModel
     extends InteractorViewModel<ExerciseListInteractor> {
   List<Exercise>? _model;
 
-  ExerciseListViewModel(BuildContext context, ExerciseListInteractor interactor)
-      : super(context, interactor) {
+  ExerciseListViewModel(super.context, super.interactor) {
     load();
   }
 

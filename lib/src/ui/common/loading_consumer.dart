@@ -6,10 +6,10 @@ import 'package:yet_another_fitness_tracker/src/ui/common/loading_widget.dart';
 
 class LoadingConsumer<T extends Loadable> extends SingleChildStatelessWidget {
   const LoadingConsumer({
-    Key? key,
+    super.key,
     required this.builder,
-    Widget? child,
-  }) : super(key: key, child: child);
+    super.child,
+  });
 
   final Widget Function(
     BuildContext context,

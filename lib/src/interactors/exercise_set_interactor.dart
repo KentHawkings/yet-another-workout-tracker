@@ -1,4 +1,3 @@
-import 'package:yet_another_fitness_tracker/src/data/data_manager.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/datamanager_interactor.dart';
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
@@ -13,7 +12,7 @@ abstract class ExerciseSetInteractor {
 
 class DefaultExerciseSetInteractor extends DataManagerInteractor
     implements ExerciseSetInteractor {
-  DefaultExerciseSetInteractor(DataManager dataManager) : super(dataManager);
+  DefaultExerciseSetInteractor(super.dataManager);
 
   @override
   Future<List<RepType>> getRepTypes() => dataManager.getRepTypes();

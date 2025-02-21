@@ -22,7 +22,7 @@ class HomePage extends StatefulWidget {
     );
   }
 
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -91,8 +91,8 @@ class _HomePageState extends ViewModelState<HomePage, HomeViewModel> {
             onPressed: () {
               _onClickFab(context);
             },
-            child: const Icon(FeatherIcons.plus),
             key: _fabKey,
+            child: const Icon(FeatherIcons.plus),
           ),
         );
       },

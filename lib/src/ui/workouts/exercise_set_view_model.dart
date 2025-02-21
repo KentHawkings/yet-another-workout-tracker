@@ -1,4 +1,3 @@
-import 'package:flutter/widgets.dart';
 import 'package:provider/provider.dart';
 import 'package:yet_another_fitness_tracker/src/data/local/shared_prefs.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/exercise_set_interactor.dart';
@@ -18,9 +17,8 @@ class ExerciseSetViewModel extends InteractorViewModel<ExerciseSetInteractor> {
 
   late RepType _selectedType;
 
-  ExerciseSetViewModel(BuildContext context, ExerciseSetInteractor interactor)
-      : measurementSystem = Provider.of<SharedPrefs>(context).weightMeasurement,
-        super(context, interactor) {
+  ExerciseSetViewModel(super.context, super.interactor)
+      : measurementSystem = Provider.of<SharedPrefs>(context).weightMeasurement {
     load();
   }
 

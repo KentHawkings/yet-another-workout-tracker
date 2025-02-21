@@ -14,11 +14,11 @@ class ExerciseTypeListPage extends StatefulWidget {
     return MultiProvider(
       providers: [
         ProxyProvider<DataManager, ExerciseTypeListInteractor>(
-          update: (_context, dataManager, _prev) =>
+          update: (context, dataManager, prev) =>
               DefaultExerciseTypeListInteractor(dataManager),
         ),
         ProxyProvider<ExerciseTypeListInteractor, ExerciseTypeListViewModel>(
-          update: (context, interactor, _prev) =>
+          update: (context, interactor, prev) =>
               ExerciseTypeListViewModel(context, interactor),
         ),
       ],
@@ -26,7 +26,7 @@ class ExerciseTypeListPage extends StatefulWidget {
     );
   }
 
-  const ExerciseTypeListPage({Key? key}) : super(key: key);
+  const ExerciseTypeListPage({super.key});
 
   @override
   State<ExerciseTypeListPage> createState() => _ExerciseTypeListPageState();

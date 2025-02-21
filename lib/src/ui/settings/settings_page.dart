@@ -25,7 +25,7 @@ class SettingsPage extends StatefulWidget {
     );
   }
 
-  const SettingsPage({Key? key}) : super(key: key);
+  const SettingsPage({super.key});
 
   @override
   State<SettingsPage> createState() => _SettingsPageState();
@@ -191,11 +191,13 @@ class _SettingsPageState extends ViewModelState<SettingsPage, SettingsViewModel>
 
   void _showAboutDialog(BuildContext context) async {
     var info = await PackageInfo.fromPlatform();
-    showAboutDialog(
-      context: context,
-      applicationName: S.of(context).appTitle,
-      applicationVersion: info.version,
-    );
+    if (context.mounted) {
+      showAboutDialog(
+        context: context,
+        applicationName: S.of(context).appTitle,
+        applicationVersion: info.version,
+      );
+    }
   }
 }
 
@@ -205,8 +207,7 @@ class _SettingsListItem extends StatelessWidget {
   final GestureTapCallback onTap;
 
   const _SettingsListItem(
-      {Key? key, required this.onTap, required this.title, this.trailing})
-      : super(key: key);
+      {required this.onTap, required this.title, this.trailing});
 
   @override
   Widget build(BuildContext context) {

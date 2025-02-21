@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 
 class AnimatedFAB extends StatefulWidget {
   const AnimatedFAB({
-    Key? key,
+    super.key,
     required this.child,
     required this.onPressed,
     required this.isVisible,
     this.tooltip,
-  }) : super(key: key);
+  });
 
   final Widget child;
   final Function() onPressed;
@@ -15,10 +15,10 @@ class AnimatedFAB extends StatefulWidget {
   final bool isVisible;
 
   @override
-  _AnimatedFABState createState() => _AnimatedFABState();
+  AnimatedFABState createState() => AnimatedFABState();
 }
 
-class _AnimatedFABState extends State<AnimatedFAB>
+class AnimatedFABState extends State<AnimatedFAB>
     with SingleTickerProviderStateMixin {
   @override
   void initState() {
@@ -62,9 +62,9 @@ class _AnimatedFABState extends State<AnimatedFAB>
     return _FABTransition(
       animation: animation,
       child: FloatingActionButton(
-        child: child,
         tooltip: tooltip,
         onPressed: onPressed,
+        child: child,
       ),
     );
   }
@@ -78,10 +78,9 @@ class _AnimatedFABState extends State<AnimatedFAB>
 
 class _FABTransition extends AnimatedWidget {
   const _FABTransition({
-    Key? key,
     required this.animation,
     required this.child,
-  }) : super(key: key, listenable: animation);
+  }) : super(listenable: animation);
 
   final Animation<double> animation;
   final Widget child;

@@ -4,11 +4,11 @@ import 'package:yet_another_fitness_tracker/src/data/local/seed/database_seeder.
 import 'package:yet_another_fitness_tracker/src/data/local/shared_prefs.dart';
 import 'package:yet_another_fitness_tracker/src/ui/home/home_page.dart';
 import 'package:yet_another_fitness_tracker/src/themer.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:yet_another_fitness_tracker/generated/l10n.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
 class YaftApp extends StatelessWidget {
-  const YaftApp({Key? key}) : super(key: key);
+  const YaftApp({super.key});
 
   @override
   Widget build(BuildContext context) {

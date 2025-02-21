@@ -28,7 +28,7 @@ class NewExercisePage extends StatefulWidget {
     );
   }
 
-  const NewExercisePage({Key? key}) : super(key: key);
+  const NewExercisePage({super.key});
 
   @override
   State<StatefulWidget> createState() => _NewExercisePageState();
@@ -80,7 +80,8 @@ class _NewExercisePageState
                   validator: buildValidator(context: context),
                   items: viewModel.exerciseTypeList
                       .map((value) => DropdownMenuItem(
-                          child: Text(value.name), value: value))
+                          value: value,
+                          child: Text(value.name)))
                       .toList(),
                 ),
                 const SizedBox(height: Dimens.spaceLarge),
@@ -95,8 +96,8 @@ class _NewExercisePageState
                   items: viewModel.measurementDimensions
                       .map(
                         (value) => DropdownMenuItem(
-                          child: Text(value.name),
                           value: value,
+                          child: Text(value.name),
                         ),
                       )
                       .toList(),
@@ -107,7 +108,9 @@ class _NewExercisePageState
                     // Validate returns true if the form is valid, or false otherwise.
                     if (_formKey.currentState!.validate()) {
                       viewModel.saveExercise().then(
-                            (value) => {Navigator.pop(context)},
+                            (value) => {
+                              if (context.mounted) {Navigator.pop(context)}
+                            },
                             onError: (error) => {},
                           );
                     }

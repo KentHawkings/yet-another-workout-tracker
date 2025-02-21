@@ -6,8 +6,7 @@ class ThemePicker extends StatelessWidget {
   final ValueChanged<ThemeMode?> onChanged;
 
   const ThemePicker(
-      {Key? key, required this.themeMode, required this.onChanged})
-      : super(key: key);
+      {super.key, required this.themeMode, required this.onChanged});
 
   @override
   Widget build(BuildContext context) {

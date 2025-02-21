@@ -69,7 +69,7 @@ class _SettingsPageState extends ViewModelState<SettingsPage, SettingsViewModel>
                   color: Theme.of(context).primaryColor,
                   boxShadow: [
                     BoxShadow(
-                      color: Theme.of(context).primaryColor.withOpacity(0.8),
+                      color: Theme.of(context).primaryColor.withValues(alpha: 0.8),
                       offset: const Offset(1.0, 2.0),
                       blurRadius: 3.0,
                     ),

@@ -3,11 +3,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:yet_another_fitness_tracker/generated/l10n.dart';
 
-extension ColorTransfomations on Color {
+extension ColorTransformations on Color {
   MaterialColor get materialColor {
-    List strengths = <double>[.05];
+    // Start with an initial strength of 5%
+    List<double> strengths = <double>[0.05];
     final swatch = <int, Color>{};
-    final int r = red, g = green, b = blue;
+
+    // Convert the new double-based getters into ints
+    final int r = this.r.toInt();
+    final int g = this.g.toInt();
+    final int b = this.b.toInt();
 
     for (int i = 1; i < 10; i++) {
       strengths.add(0.1 * i);
@@ -21,10 +26,9 @@ extension ColorTransfomations on Color {
         1,
       );
     }
-    return MaterialColor(value, swatch);
+    return MaterialColor(toARGB32(), swatch);
   }
 }
-
 extension ThemeModeLocalizedString on ThemeMode {
   String localizedString(context) {
     switch (this) {
@@ -41,7 +45,7 @@ extension ThemeModeLocalizedString on ThemeMode {
 extension UseWhiteForeground on Color {
   bool useWhiteForeground({double bias = 1.0}) {
     int v =
-        sqrt(pow(red, 2) * 0.299 + pow(green, 2) * 0.587 + pow(blue, 2) * 0.114)
+        sqrt(pow(r, 2) * 0.299 + pow(g, 2) * 0.587 + pow(b, 2) * 0.114)
             .round();
     return v < 130 * bias ? true : false;
   }

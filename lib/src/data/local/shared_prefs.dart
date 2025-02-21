@@ -16,21 +16,17 @@ class SharedPrefs {
       _prefs.setInt(_sharedPrefsThemeMode, themeMode.index);
 
   ThemeMode get themeMode {
-    int? index = _prefs.getInt(_sharedPrefsThemeMode);
+    int index = _prefs.getInt(_sharedPrefsThemeMode) ?? 0;
 
-    if (index != null) {
-      return ThemeMode.values[index];
-    } else {
-      return ThemeMode.system;
-    }
+    return ThemeMode.values[index];
   }
 
   Future<bool> setPrimaryColor(Color color) =>
-      _prefs.setInt(_sharedPrefsPrimaryColor, color.value);
+      _prefs.setInt(_sharedPrefsPrimaryColor, color.toARGB32());
 
   Color get primaryColor {
     int primaryColor =
-        _prefs.getInt(_sharedPrefsPrimaryColor) ?? Colors.purple.value;
+        _prefs.getInt(_sharedPrefsPrimaryColor) ?? Colors.purple.toARGB32();
     return Color(primaryColor);
   }
 

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yet_another_fitness_tracker/src/constants/durations.dart';
 import 'package:yet_another_fitness_tracker/src/utils/anim/page_transition_type.dart';
 import 'package:yet_another_fitness_tracker/src/utils/anim/transition_effect.dart';
 import 'package:yet_another_fitness_tracker/src/utils/anim/transition_tween.dart';
@@ -97,7 +96,7 @@ class PageTransition extends PageRouteBuilder {
     required this.child,
     required this.type,
     this.curve = Curves.linear,
-    this.duration = Durations.animLong,
+    this.duration = Durations.medium2,
   }) : super(
           pageBuilder: (
             BuildContext context,

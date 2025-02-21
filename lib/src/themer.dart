@@ -73,19 +73,19 @@ class Themer extends ChangeNotifier {
         );
 
     return base.copyWith(
-      bodyText1: convert(base.bodyText1!),
-      bodyText2: convert(base.bodyText2!),
-      subtitle1: convert(base.subtitle1!),
-      subtitle2: convert(base.subtitle2!),
-      headline1: convert(base.headline1!),
-      headline2: convert(base.headline2!),
-      headline3: convert(base.headline3!),
-      headline4: convert(base.headline4!),
-      headline5: convert(base.headline5!),
-      headline6: convert(base.headline6!),
-      button: convert(base.button!),
-      caption: convert(base.caption!),
-      overline: convert(base.overline!),
+      bodyLarge: convert(base.bodyLarge!),
+      bodyMedium: convert(base.bodyMedium!),
+      titleMedium: convert(base.titleMedium!),
+      titleSmall: convert(base.titleSmall!),
+      displayLarge: convert(base.displayLarge!),
+      displayMedium: convert(base.displayMedium!),
+      displaySmall: convert(base.displaySmall!),
+      headlineMedium: convert(base.headlineMedium!),
+      headlineSmall: convert(base.headlineSmall!),
+      titleLarge: convert(base.titleLarge!),
+      labelLarge: convert(base.labelLarge!),
+      bodySmall: convert(base.bodySmall!),
+      labelSmall: convert(base.labelSmall!),
     );
   }
 
@@ -105,7 +105,7 @@ class Themer extends ChangeNotifier {
 
   RadioThemeData get _radioTheme => RadioThemeData(
         fillColor:
-            MaterialStateColor.resolveWith((states) => _prefs.primaryColor),
+            WidgetStateColor.resolveWith((states) => _prefs.primaryColor),
       );
 
   InputDecorationTheme get _inputDecorationTheme => const InputDecorationTheme(

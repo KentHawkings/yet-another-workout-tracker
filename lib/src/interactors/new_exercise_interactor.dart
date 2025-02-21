@@ -3,7 +3,7 @@ import 'package:yet_another_fitness_tracker/src/interactors/datamanager_interact
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
 
-abstract class NewExerciseInteractor {
+mixin NewExerciseInteractor {
   Future<List<MeasurementDimension>> getExerciseDimensions();
 
   Future<List<ExerciseType>> getExerciseTypeList();

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
 import 'package:yet_another_fitness_tracker/generated/l10n.dart';
-import 'package:yet_another_fitness_tracker/src/constants/durations.dart';
 import 'package:yet_another_fitness_tracker/src/data/data_manager.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/exercise_type_list_interactor.dart';
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
@@ -64,7 +63,7 @@ class _ExerciseTypeListPageState extends LoadableViewModelState<
   Widget _buildIcon() {
     return IconButton(
       icon: AnimatedSwitcher(
-        duration: Durations.animMedium,
+        duration: Durations.short4,
         transitionBuilder: (child, anim) => RotationTransition(
           turns: child.key == _xIconKey
               ? Tween<double>(begin: 1, end: 0.75).animate(anim)
@@ -113,7 +112,7 @@ class _ExerciseTypeListPageState extends LoadableViewModelState<
           child: child,
         );
       },
-      duration: Durations.animMedium,
+      duration: Durations.short4,
       child: child,
     );
   }

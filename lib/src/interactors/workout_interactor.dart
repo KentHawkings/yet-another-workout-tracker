@@ -2,7 +2,7 @@ import 'package:yet_another_fitness_tracker/src/data/data_manager.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/datamanager_interactor.dart';
 import 'package:yet_another_fitness_tracker/src/models/workout.dart';
 
-abstract class WorkoutListInteractor {
+mixin WorkoutListInteractor {
   Future<List<Workout>> getWorkoutList(DateTime date);
 }
 

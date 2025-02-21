@@ -4,7 +4,7 @@ import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
 import 'package:yet_another_fitness_tracker/src/models/rep.dart';
 
-abstract class ExerciseSetInteractor {
+mixin ExerciseSetInteractor {
   Future<List<RepType>> getRepTypes();
 
   Future<ExerciseSet> saveExerciseSet(

@@ -18,17 +18,20 @@ class S {
   static S? _current;
 
   static S get current {
-    assert(_current != null,
-        'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.');
+    assert(
+      _current != null,
+      'No instance of S was loaded. Try to initialize the S delegate before accessing S.current.',
+    );
     return _current!;
   }
 
   static const AppLocalizationDelegate delegate = AppLocalizationDelegate();
 
   static Future<S> load(Locale locale) {
-    final name = (locale.countryCode?.isEmpty ?? false)
-        ? locale.languageCode
-        : locale.toString();
+    final name =
+        (locale.countryCode?.isEmpty ?? false)
+            ? locale.languageCode
+            : locale.toString();
     final localeName = Intl.canonicalizedLocale(name);
     return initializeMessages(localeName).then((_) {
       Intl.defaultLocale = localeName;
@@ -41,8 +44,10 @@ class S {
 
   static S of(BuildContext context) {
     final instance = S.maybeOf(context);
-    assert(instance != null,
-        'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?');
+    assert(
+      instance != null,
+      'No instance of S present in the widget tree. Did you add S.delegate in localizationsDelegates?',
+    );
     return instance!;
   }
 
@@ -102,12 +107,7 @@ class S {
 
   /// `Close`
   String get close {
-    return Intl.message(
-      'Close',
-      name: 'close',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Close', name: 'close', desc: '', args: []);
   }
 
   /// `Confirm`
@@ -122,32 +122,17 @@ class S {
 
   /// `Today`
   String get dateToday {
-    return Intl.message(
-      'Today',
-      name: 'dateToday',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Today', name: 'dateToday', desc: '', args: []);
   }
 
   /// `Yesterday`
   String get dateYesterday {
-    return Intl.message(
-      'Yesterday',
-      name: 'dateYesterday',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Yesterday', name: 'dateYesterday', desc: '', args: []);
   }
 
   /// `Tomorrow`
   String get dateTomorrow {
-    return Intl.message(
-      'Tomorrow',
-      name: 'dateTomorrow',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Tomorrow', name: 'dateTomorrow', desc: '', args: []);
   }
 
   /// `Edit Exercise`
@@ -372,22 +357,12 @@ class S {
 
   /// `Abs`
   String get exerciseTypeAbs {
-    return Intl.message(
-      'Abs',
-      name: 'exerciseTypeAbs',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Abs', name: 'exerciseTypeAbs', desc: '', args: []);
   }
 
   /// `Back`
   String get exerciseTypeBack {
-    return Intl.message(
-      'Back',
-      name: 'exerciseTypeBack',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Back', name: 'exerciseTypeBack', desc: '', args: []);
   }
 
   /// `Biceps`
@@ -412,22 +387,12 @@ class S {
 
   /// `Chest`
   String get exerciseTypeChest {
-    return Intl.message(
-      'Chest',
-      name: 'exerciseTypeChest',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Chest', name: 'exerciseTypeChest', desc: '', args: []);
   }
 
   /// `Legs`
   String get exerciseTypeLegs {
-    return Intl.message(
-      'Legs',
-      name: 'exerciseTypeLegs',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Legs', name: 'exerciseTypeLegs', desc: '', args: []);
   }
 
   /// `Shoulders`
@@ -552,12 +517,7 @@ class S {
 
   /// `Pull Up`
   String get exercisePullUp {
-    return Intl.message(
-      'Pull Up',
-      name: 'exercisePullUp',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Pull Up', name: 'exercisePullUp', desc: '', args: []);
   }
 
   /// `Seated Calf Raises`
@@ -752,52 +712,27 @@ class S {
 
   /// `Rep Type`
   String get repType {
-    return Intl.message(
-      'Rep Type',
-      name: 'repType',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Rep Type', name: 'repType', desc: '', args: []);
   }
 
   /// `Full`
   String get repTypeFull {
-    return Intl.message(
-      'Full',
-      name: 'repTypeFull',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Full', name: 'repTypeFull', desc: '', args: []);
   }
 
   /// `Half`
   String get repTypeHalf {
-    return Intl.message(
-      'Half',
-      name: 'repTypeHalf',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Half', name: 'repTypeHalf', desc: '', args: []);
   }
 
   /// `Cheat`
   String get repTypeCheat {
-    return Intl.message(
-      'Cheat',
-      name: 'repTypeCheat',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Cheat', name: 'repTypeCheat', desc: '', args: []);
   }
 
   /// `Spotted`
   String get repTypeSpotted {
-    return Intl.message(
-      'Spotted',
-      name: 'repTypeSpotted',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Spotted', name: 'repTypeSpotted', desc: '', args: []);
   }
 
   /// `Select Exercise`
@@ -812,22 +747,12 @@ class S {
 
   /// `About`
   String get settingsAbout {
-    return Intl.message(
-      'About',
-      name: 'settingsAbout',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('About', name: 'settingsAbout', desc: '', args: []);
   }
 
   /// `Theme`
   String get settingsTheme {
-    return Intl.message(
-      'Theme',
-      name: 'settingsTheme',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Theme', name: 'settingsTheme', desc: '', args: []);
   }
 
   /// `Primary Colour`
@@ -842,22 +767,12 @@ class S {
 
   /// `Light`
   String get themeModeLight {
-    return Intl.message(
-      'Light',
-      name: 'themeModeLight',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Light', name: 'themeModeLight', desc: '', args: []);
   }
 
   /// `Dark`
   String get themeModeDark {
-    return Intl.message(
-      'Dark',
-      name: 'themeModeDark',
-      desc: '',
-      args: [],
-    );
+    return Intl.message('Dark', name: 'themeModeDark', desc: '', args: []);
   }
 
   /// `System Default`
@@ -925,9 +840,7 @@ class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
-    return const <Locale>[
-      Locale.fromSubtags(languageCode: 'en'),
-    ];
+    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
   }
 
   @override

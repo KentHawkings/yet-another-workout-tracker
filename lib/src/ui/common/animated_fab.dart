@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:yet_another_fitness_tracker/src/constants/durations.dart';
 
 class AnimatedFAB extends StatefulWidget {
   const AnimatedFAB({
@@ -25,7 +24,7 @@ class _AnimatedFABState extends State<AnimatedFAB>
   void initState() {
     super.initState();
     controller = AnimationController(
-      duration: Durations.animMedium,
+      duration: Durations.short4,
       vsync: this,
     );
     animation = CurvedAnimation(parent: controller, curve: Curves.easeInBack);

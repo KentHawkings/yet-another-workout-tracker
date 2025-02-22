@@ -17,6 +17,7 @@ jobs:
           channel: stable
           flutter-version: 3.29.0
       - run: flutter pub get
+      - run: dart run build_runner build
       - run: flutter analyze
       - run: flutter test
         

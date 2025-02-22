@@ -1,7 +1,5 @@
 import 'dart:math';
-
 import 'package:flutter/material.dart';
-import 'package:yet_another_fitness_tracker/generated/l10n.dart';
 
 extension ColorTransformations on Color {
   MaterialColor get materialColor {
@@ -29,18 +27,6 @@ extension ColorTransformations on Color {
     return MaterialColor(toARGB32(), swatch);
   }
 }
-extension ThemeModeLocalizedString on ThemeMode {
-  String localizedString(context) {
-    switch (this) {
-      case ThemeMode.system:
-        return S.of(context).themeModeSystem;
-      case ThemeMode.light:
-        return S.of(context).themeModeLight;
-      case ThemeMode.dark:
-        return S.of(context).themeModeDark;
-    }
-  }
-}
 
 extension UseWhiteForeground on Color {
   bool useWhiteForeground({double bias = 1.0}) {
@@ -49,18 +35,4 @@ extension UseWhiteForeground on Color {
             .round();
     return v < 130 * bias ? true : false;
   }
-}
-
-extension DateTimeUtils on DateTime {
-  DateTime get dateOnly => DateUtils.dateOnly(this);
-
-  bool get isCurrentYear => year == DateTime.now().year;
-
-  bool get isToday => DateUtils.isSameDay(this, DateTime.now());
-
-  bool get isTomorrow =>
-      DateUtils.isSameDay(this, DateTime.now().add(const Duration(days: 1)));
-
-  bool get isYesterday =>
-      DateUtils.isSameDay(this, DateTime.now().add(const Duration(days: -1)));
 }

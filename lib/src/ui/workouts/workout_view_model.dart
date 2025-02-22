@@ -1,10 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:intl/intl.dart';
 import 'package:yet_another_fitness_tracker/generated/l10n.dart';
+import 'package:yet_another_fitness_tracker/src/extensions/date_time_extensions.dart';
 import 'package:yet_another_fitness_tracker/src/interactors/workout_interactor.dart';
 import 'package:yet_another_fitness_tracker/src/models/workout.dart';
 import 'package:yet_another_fitness_tracker/src/ui/common/view_model.dart';
-import 'package:yet_another_fitness_tracker/src/utils/extensions.dart';
 
 class WorkoutViewModel extends LoadableViewModel {
   final WorkoutListInteractor _interactor;

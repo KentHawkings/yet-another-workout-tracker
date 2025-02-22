@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:yet_another_fitness_tracker/src/constants/dimens.dart';
-import 'package:yet_another_fitness_tracker/src/utils/extensions.dart';
+import 'package:yet_another_fitness_tracker/src/extensions/color_extensions.dart';
 import 'package:yet_another_fitness_tracker/src/data/local/shared_prefs.dart';
 
 class Themer extends ChangeNotifier {

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yet_another_fitness_tracker/src/utils/extensions.dart';
-
+import 'package:yet_another_fitness_tracker/src/extensions/theme_mode_extensions.dart';
 class ThemePicker extends StatelessWidget {
   final ThemeMode themeMode;
   final ValueChanged<ThemeMode?> onChanged;

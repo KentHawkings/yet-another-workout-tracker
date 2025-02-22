@@ -1,9 +1,9 @@
 import 'package:yet_another_fitness_tracker/objectbox.g.dart';
+import 'package:yet_another_fitness_tracker/src/extensions/date_time_extensions.dart';
 import 'package:yet_another_fitness_tracker/src/models/exercise.dart';
 import 'package:yet_another_fitness_tracker/src/models/measurement.dart';
 import 'package:yet_another_fitness_tracker/src/models/rep.dart';
 import 'package:yet_another_fitness_tracker/src/models/workout.dart';
-import 'package:yet_another_fitness_tracker/src/utils/extensions.dart';
 
 class Database {
   final Store _store;

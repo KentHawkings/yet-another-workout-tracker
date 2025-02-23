@@ -1,4 +1,3 @@
-import 'dart:math';
 import 'package:flutter/material.dart';
 
 extension ColorTransformations on Color {
@@ -29,10 +28,13 @@ extension ColorTransformations on Color {
 }
 
 extension UseWhiteForeground on Color {
-  bool useWhiteForeground({double bias = 1.0}) {
-    int v =
-        sqrt(pow(r, 2) * 0.299 + pow(g, 2) * 0.587 + pow(b, 2) * 0.114)
-            .round();
-    return v < 130 * bias ? true : false;
+  bool useWhiteForeground() {
+    var brightness = ThemeData.estimateBrightnessForColor(this);
+    switch (brightness) {
+      case Brightness.light:
+        return false;
+      case Brightness.dark:
+        return true;
+    }
   }
 }
